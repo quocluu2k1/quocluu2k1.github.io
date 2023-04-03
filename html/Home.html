@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/03d74a278a.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/message.css">
+</head>
+
+<body>
+    <div id="alert_success" class="alert_success">Thêm vào giỏ hàng thành công</div>
+    <div class="message">
+        <div id="container_chat" class="container_chat">
+            <div class="header_chat">
+                <a class="close_chat" onclick="closeChat()">&#x2715 Đóng</a>
+            </div>
+            <div class="content_chat"></div>
+            <div class="input_chat">
+                <!-- <div>
+                    <label for="file-input">
+                        <i class="fa-solid fa-image"></i>
+                    </label>
+                  
+                    <input style="display: none;" id="file-input" type="file" />
+                </div> -->
+                <a class="input_image_chat"><i class="fa-solid fa-image"></i></a>
+                <input class="text_chat" type="text" placeholder="Gửi tin nhắn">
+                <a class="send_chat"><svg style="transform: rotate(45deg);" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div onclick="openNewChat(this)" class="icon_chat" id="icon_chat"><i style="transform: translateY(50%);" class="fa-solid fa-comments"></i></div>   
+    </div>
+    <div class="header">
+        <div class="header-top">
+            <div class="logo-header">
+                <a href="/html/Home.html" style="height: fit-content; width: fit-content;">
+                    <img style="height:55px; width:auto;transform: translatey(7px);" src="/logo/Screenshot_2022-08-31_172909-removebg-preview (1).png" alt="logo">
+                </a>
+                
+                <!-- <img style="height:40px; width:auto;transform: translatey(10px);" src="/logo/logo.png" alt="logo"> -->
+                <div>
+                    <!-- <span style="color: rgb(6, 255, 27);margin: 0;padding: 0;">Tech</span>
+                    <span style="color: rgb(255, 238, 6);margin: 0;padding: 0;">Goods</span> -->
+                    <!-- <span style="color: rgb(255 158 13);margin: 0;padding: 0;">TechGoods</span> -->
+                    <!-- <span style="color: white;background-color: #034ea1;padding: 3px; margin: 0;padding: 0;">Tech</span>
+                    <span style="color: white;background-color: #51b847;padding: 3px; margin: 0;padding: 0;">Goods</span> -->
+                </div>              
+            </div>
+            <form action="/html/ResultSearch.html">
+                <input type="text" class="header-search" placeholder="Bạn cần tìm gì..."/>
+                <button type="submit" class="header-search-btn">
+                    <i class="fa-solid fa-magnifying-glass" style="transform: scale(1.4);padding: 0;"></i>
+                </button>
+            </form>
+            <ul class="header-personal">
+                <li>
+                    <div onclick="showCart()">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                </li>
+                <li class="account_info">
+                    <div onclick="showProfile()">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Tài khoản</span>
+                    </div>
+                    <div class="option_account">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <span>Tài khoản của tôi</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <span>Quản lý đơn hàng</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-eye"></i>
+                            <span>Sản phẩm đã xem</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-star"></i>
+                            <span>Lịch sử đánh giá</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-comment"></i>
+                            <span>Lịch sử bình luận</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Đăng xuất</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header-navbar">
+            <ul class="main-menu">
+                <li>
+                    <a class="main-menu-name" href="/html/category.html"><i class="fa-solid fa-mobile-screen"></i><span>Điện thoại</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">Vivo</a></li>
+                                <li><a href="#">Tecno</a></li>
+                                <li><a href="#">Nokia</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">Realme</a></li>
+                                <li><a href="#">Masstel</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 2 triệu</a></li>
+                                <li><a href="#">Từ 2 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Trên 15 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>LOẠI ĐIỆN THOẠI</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Android</a></li>
+                                <li><a href="#">iphone(iOS)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fas fa-laptop"></i><span>Laptop</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Acer</a></li>
+                                <li><a href="#">Dell</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">MSI</a></li>
+                                <li><a href="#">HP</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">LG</a></li>
+                                <li><a href="#">Microsoft surface</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Từ 15 - 20 triệu</a></li>
+                                <li><a href="#">Từ 20 - 30 triệu</a></li>
+                                <li><a href="#">Trên 30 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Laptop văn phòng</a></li>
+                                <li><a href="#">Laptop gaming</a></li>
+                                <li><a href="#">Laptop mỏng nhẹ</a></li>
+                                <li><a href="#">Laptop đồ hoạ - kỹ thuật</a></li>
+                                <li><a href="#">Laptop sinh viên</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-tablet-screen-button"></i><span>Tablet</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">Masstel</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Nexta</a></li>
+                                <li><a href="#">Coolpad</a></li>
+                                <li><a href="#">Nokia</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 3 triệu</a></li>
+                                <li><a href="#">Từ 3 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Trên 10 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Chơi game</a></li>
+                                <li><a href="#">Học tập - văn phòng</a></li>
+                                <li><a href="#">Giải trí</a></li>
+                                <li><a href="#">Đồ hoạ - sáng tạo</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>KÍCH THƯỚC MÀN HÌNH</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">7 - 8 inch (nhỏ gọn)</a></li>
+                                <li><a href="#">10 - 12 inch (trung bình)</a></li>
+                                <li><a href="#">Trên 12 inch (lớn)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-computer"></i><span>PC- Linh kiện</span></a>
+                    <div class="sub-main-menu" style="width: 12%;height: 22%;left: 533px;">
+                        <div>
+                            <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                <li><a href="#">PC</a></li>
+                                <li><a href="#">Linh kiện</a></li>
+                                <li><a href="#">Màn hình</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-headphones-simple"></i><span>Phụ kiện</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>CÁC SẢN PHẨM PHỤ KIỆN</p>
+                            <ul class="col4-ul">
+                                <li><a href="#">Tai nghe</a></li>
+                                <li><a href="#">Balo - túi xách</a></li>
+                                <li><a href="#">Ốp lưng điện thoại</a></li>
+                                <li><a href="#">Phụ kiện Apple</a></li>
+                                <li><a href="#">USB</a></li>
+                                <li><a href="#">Chuột</a></li>
+                                <li><a href="#">Bàn phím</a></li>
+                                <li><a href="#">Thẻ nhớ</a></li>
+                                <li><a href="#">Loa</a></li>
+                                <li><a href="#">Camera</a></li>
+                                <li><a href="#">Sạc dự phòng</a></li>
+                                <li><a href="#">Miếng dán màn hình</a></li>
+                                <li><a href="#">Sạc, cáp</a></li>
+                                <li><a href="#">Giá đỡ điện thoại</a></li>
+                            </ul>
+                        </div>
+                        <div style="margin: 0;padding:0;display: inline-block;position: absolute;" >
+                            <img style="margin-left:40px" src="/image/navbar/phukien.png" alt="image" width="auto" height="220px">
+                        </div>
+                    </div>
+                </li>               
+                <li>
+                    <a class="main-menu-name" href="#"><svg style="fill:#fafafa;transform: translatey(3px);" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M19.9381062,13 C19.6824798,15.0499603 18.651251,16.8590542 17.1473414,18.1243601 L15.9615239,22.2747211 C15.8388664,22.7040227 15.4464804,23 15,23 L9,23 C8.55351964,23 8.16113364,22.7040227 8.03847605,22.2747211 L6.85265862,18.1243601 C5.10841647,16.6568518 4,14.4578682 4,12 C4,9.54213182 5.10841647,7.34314819 6.85265862,5.87563988 L8.03847605,1.72527887 C8.16113364,1.29597731 8.55351964,1 9,1 L15,1 C15.4464804,1 15.8388664,1.29597731 15.9615239,1.72527887 L17.1473414,5.87563988 C18.651251,7.14094578 19.6824798,8.95003966 19.9381062,11 L21,11 L21,13 L19.9381062,13 Z M14.6608919,4.45317664 L14.2456986,3 L9.75430141,3 L9.33910809,4.45317664 C10.1715528,4.15967183 11.0671297,4 12,4 C12.9328703,4 13.8284472,4.15967183 14.6608919,4.45317664 Z M9.33910809,19.5468234 L9.75430141,21 L14.2456986,21 L14.6608919,19.5468234 C13.8284472,19.8403282 12.9328703,20 12,20 C11.0671297,20 10.1715528,19.8403282 9.33910809,19.5468234 Z M12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 Z M13,11 L15,11 L15,13 L11,13 L11,8 L13,8 L13,11 Z"/>
+                        </svg><span>Đồng hồ</span></a>
+                        <div class="sub-main-menu" style="width: 15%;height: 15%;left: 830px;">
+                            <div>
+                                <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                    <li><a href="#">Đồng hồ thông minh</a></li>
+                                    <li><a href="#">Đồng hồ cơ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                      
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-percent"></i><span>Khuyến mãi</span></a>
+                    <!-- <div class="sub-main-menu">7</div> -->
+                </li>
+                <li>
+                    <a class="main-menu-name" href="/html/news.html"><i class="fa-solid fa-newspaper"></i><span>Tin tức</span></a>
+                    <!-- <div class="sub-main-menu">8</div> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="slider-home">
+            <div class="left-slider"></div>
+            <div class="slider-content">
+                <div class="main-slider">
+                    <img id="image-main-slider" src="/image/slider/image1.webp" alt="slider" style=" width:100%;height:100%;cursor: pointer;">
+                    <a class="prev" onclick="plusMainSlides(-1)">❮</a>
+                    <a class="next" onclick="plusMainSlides(1)">❯</a>
+                </div>
+                <div class="sub-slider">
+                    <div style="padding: 1px;">
+                        <img src="/image/slider/subimage1.webp" alt="sub-slider1">
+                    </div>
+                    <div style="padding: 1px;">
+                        <img src="/image/slider/subimage2.webp" alt="sub-slider2">
+                    </div>
+                    <div style="padding: 1px;">
+                        <img src="/image/slider/subimage6.png" alt="sub-slider3">
+                    </div>
+                </div>
+            </div>
+            <div class="right-slider"></div>
+        </div>
+        <div class="picture" >
+            <a href="#"><img style="border-radius: 7px;" src="/ad/ad1.webp" alt="image"></a>
+        </div>
+        <div class="hot_promotion">
+            <div class="promotion_title" style="color: #cd1817;font-weight: 700; font-size: 22px;" >
+                <i class="fa-solid fa-fire"></i>
+                <span style="margin-left: 3px;">KHUYẾN MÃI HOT</span>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="/html/DetailProduct.html"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <span class="tooltip">Samsung Galaxy Z Fold4 5G 256GB</span>
+                        <h4>
+                            <a href="/html/DetailProduct.html" onmouseover="abc(this)" onmouseleave="xyz(this)">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <span class="tooltip">Samsung Galaxy Z Fold4 5G 256GB</span>
+                        <h4>
+                            <a href="#" onmouseover="abc(this)" onmouseleave="xyz(this)">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:87%"></div>
+                            </div>
+                            <span class="nrate">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:87%"></div>
+                            </div>
+                            <span class="nrate">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:87%"></div>
+                            </div>
+                            <span class="nrate">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:87%"></div>
+                            </div>
+                            <span class="nrate">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="featured_category">
+            
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-mobile.webp" alt="phone">
+                    </div>
+                    <span>Điện thoại</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-laptop.webp" alt="phone">
+                    </div>
+                    <span>Laptop</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-pc.webp" alt="phone">
+                    </div>
+                    <span>PC - Lắp ráp</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-tablet.webp" alt="phone">
+                    </div>
+                    <span>Máy tính bảng</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/Donghothoitrang-128x129-removebg-preview.png" alt="phone">
+                    </div>
+                    <span>Đồng hồ cơ</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/Camerawebcam-128x129-1-removebg-preview.png" alt="phone">
+                    </div>
+                    <span>Camera</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-apple.webp" alt="phone">
+                    </div>
+                    <span>Apple</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-samsung.webp" alt="phone">
+                    </div>
+                    <span>Samsung</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-smartwatch.webp" alt="phone">
+                    </div>
+                    <span>Đồng hồ thông minh</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-accessories.webp" alt="phone">
+                    </div>
+                    <span>Phụ kiện</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/icon-screen.webp" alt="phone">
+                    </div>
+                    <span>Màn hình</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="item_category">
+                    <div>
+                        <img src="/image/featured_category/Loa-128x128-removebg-preview.png" alt="phone">
+                    </div>
+                    <span>Loa</span>
+                </div>
+            </a>
+            
+        </div>
+        <div class="shopping_trends">
+            <div class="trend_title" style="color: #333;font-weight: 700; font-size: 22px;" >
+                <span style="margin-left: 3px;color: #3d4042;">XU HƯỚNG MUA SẮM</span>
+            </div>
+            <div class="trend_container">
+                <div class="trend_item">
+                    <a href="#">
+                        <div class="icon-trend">
+                            <p id="text">HOT</p>
+                        </div>
+                        <div class="trend_item_content">
+                            <img src="/image/product/product1.jpg" alt="product">
+                            <p style="color: black;font-size: 18px;">Điện thoại</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="trend_item">
+                    <a href="#">
+                        <div class="icon-trend">
+                            <p id="text">HOT</p>
+                        </div>
+                        <div class="trend_item_content">
+                            <img src="/image/product/product1.jpg" alt="product">
+                            <p style="color: black;font-size: 18px;">Điện thoại</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="trend_item">
+                    <a href="#">
+                        <div class="icon-trend">
+                            <p id="text">HOT</p>
+                        </div>
+                        <div class="trend_item_content">
+                            <img src="/image/product/product1.jpg" alt="product">
+                            <p style="color: black;font-size: 18px;">Điện thoại</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="trend_item">
+                    <a href="#">
+                        <div class="icon-trend">
+                            <p id="text">HOT</p>
+                        </div>
+                        <div class="trend_item_content">
+                            <img src="/image/product/product1.jpg" alt="product">
+                            <p style="color: black;font-size: 18px;">Điện thoại</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="new_product" id="new_product">
+            <div class="promotion_title" style="color: #cd1817;font-weight: 700; font-size: 22px;" >
+                <!-- <i class="fa-solid fa-fire"></i> -->
+                <span style="margin-left: 3px;">SẢN PHẨM MỚI</span>
+            </div>
+            <div id="listNewProduct" style="margin-top: 20px;">
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="see_more">
+                <a onclick="seeMore()" id="seeMore">Xem Thêm</a>
+            </div>
+        </div>
+
+
+        <div class="featured_phone">
+            <div class="selling_title" style="color: #cd1817;font-weight: 700; font-size: 22px;" >
+                <span style="margin-left: 3px;">ĐIỆN THOẠI NỔI BẬT</span>
+            </div>
+            <div style="margin-top: 10px;">
+
+
+                <!-- <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <span>
+                                <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-sd-card"></i>
+                                <span>8 GB</span>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-hard-drive"></i>
+                                <span>256 GB</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div> -->
+
+
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="selling_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="selling_item_img">
+                        <a href="#"><img class="selling_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="selling_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <h3>40.990.000 ₫</h3>
+                        
+                        <div class="selling_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                <span>Snapdragon 695 5G</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                <span>6.43 inch</span>
+                            </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Bộ nhớ trong</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>256 GB</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div style="margin-top: 15px;" class="see_more">
+                <a id="seeMore">Xem Thêm</a>
+            </div>
+        </div>
+        <div class="selling_laptop">
+            <div class="selling_title" style="color: #cd1817;font-weight: 700; font-size: 22px;" >
+                <span style="margin-left: 3px;">LAPTOP BÁN CHẠY</span>
+            </div>
+            <div style="margin-top: 10px;">
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                    <div class="laptop_item_img">
+                        <a href="#"><img class="laptop_img_product" src="/image/product/product2.webp" alt="product"></a>
+                        <div class="sale">-12%</div>
+                    </div>
+                    <div class="laptop_item_info">
+                        <h4>
+                            <a href="/html/DetailProduct.html">Asus TUF Gaming FX516P-HN558W i5 11300H</a>
+                        </h4>
+                        <h3>18.690.000 ₫</h3>
+                        
+                        <div class="laptop_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:70%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                        <div class="specification">
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Màn hình</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-display"></i>
+                                    <span>15.6 inch</span>
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">CPU</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <span>Core i5</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">RAM</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-sd-card"></i>
+                                    <span>8 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Ổ cứng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                    <span>SSD 512 GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Đồ hoạ</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gpu-card" viewBox="0 0 16 16">
+                                        <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+                                        <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"/>
+                                    </svg>
+                                    <span>NVIDIA GeForce RTX 3050 4GB</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span style="transform: translate(20px,-30px);background-color: #333;color: #fafafa;border-radius: 4px;" class="tooltip">Trọng lượng</span>
+                                <span onmouseover="showTooltipSpecification(this)" onmouseleave="hideTooltipSpecification(this)">
+                                    <i class="fa-solid fa-weight-hanging"></i>
+                                    <span>2 kg</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase">
+                        <button style="background-color: #cd1817;margin-right: 10px;">Mua ngay</button>
+                        <button onclick="showAlertSuccess()" style="background-color: #fff0e9;color: #cd1817;">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <!-- <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                </div>
+                <div class="laptop_item" onmouseover="hoverSellingProduct(this)" onmouseleave="outHoverSellingProduct(this)">
+                </div> -->
+            </div>
+            <div style="margin-top: 15px;" class="see_more">
+                <a id="seeMore">Xem Thêm</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>LIÊN HỆ</h3>
+            <div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span style="margin-left: 10px;">P.Linh Trung,TP.Thủ Đức,TP.HCM,Việt Nam</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span style="margin-left: 10px;">0123456789</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span style="margin-left: 10px;">info@techgoods.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THÔNG TIN</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>CHÍNH SÁCH</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Đổi trả</a></li>
+                    <li><a href="#">Bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THEO DÕI</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span style="margin-left: 5px;">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span style="margin-left: 5px;">Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span style="margin-left: 5px;">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span style="margin-left: 5px;">Linkedin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>TẢI ỨNG DỤNG</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img height="50px" height="auto" src="/image/footer/googleplay.png" alt="googleplay">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img style="margin-left: 8px;" height="35px" height="auto" src="/image/footer/appstore.png" alt="googleplay">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let slideIndex = 0;
+    timeout();
+    function timeout() {
+        setTimeout(function () {
+            if(slideIndex>=6){
+                slideIndex=0;
+            }
+            plusMainSlides(2);
+            slideIndex++;
+            timeout();
+        }, 4000);
+    }
+    function plusMainSlides(n){
+        let imageArray = ["image1.webp","image2.webp","image3.webp","image4.webp","image5.webp","image6.webp"];
+        let image = document.getElementById("image-main-slider");
+        
+        let imageAuto = "/image/slider/"+imageArray[slideIndex];
+        image.src = imageAuto;
+        if(slideIndex%2==0){
+            image.style.animationName = "fade1";
+            image.style.animationDuration = "1.5s";
+        }else{
+            image.style.animationName = "fade2";
+            image.style.animationDuration = "1.5s";
+        }
+        if(n==1){
+            if(slideIndex>=5){
+                slideIndex=0;
+            }else{
+                slideIndex++;
+            }
+            image.src = "/image/slider/"+imageArray[slideIndex];           
+        }
+        if(n==-1){
+            if(slideIndex<=0){
+                slideIndex=5;
+            }else{
+                slideIndex--;
+            }
+            image.src = "/image/slider/"+imageArray[slideIndex];            
+        }
+        
+    }
+    const sleep = ms => new Promise(res => setTimeout(res, ms));
+    async function seeMore(){
+        document.getElementById("seeMore").innerText = "Đang tải...";
+        await sleep(1000);
+        let listNewProduct = document.getElementById("new_product");
+        let oldHeight = listNewProduct.offsetHeight;
+        document.getElementById("new_product").style.height = oldHeight+385*3+"px";
+        for(let i=0;i<15;i++){
+            document.getElementById("listNewProduct").innerHTML +=  `<div style="margin-right: 12px;" class="promotion_item">
+                    <div class="promotion_item_img">
+                        <a href="#"><img class="promotion_img_product" src="/image/product/product1.jpg" alt="product"></a>
+                        <div class="icon_new">
+                            <img width="45px" src="/image/tag/tag_new-removebg-preview111.png" alt="new_product">
+                        </div>
+                    </div>
+                    <div class="promotion_item_info">
+                        <h4>
+                            <a href="#">Samsung Galaxy Z Fold4 5G 256GB</a>
+                        </h4>
+                        <div class="price">
+                            <h3>40.990.000 ₫</h3>
+                            <span class="sale_new_product">-18%</span>
+                        </div>
+                        
+                        <div class="promotion_item_rate">
+                            <div class="ratings">
+                                <div class="empty-stars"></div>
+                                <div class="full-stars" style="width:`+(10+Math.random()*90)+`%"></div>
+                            </div>
+                            <span class="nrate">(12)</span>
+                        </div>
+                    </div>
+                </div>`; 
+        }
+        document.getElementById("seeMore").innerText = "Xem Thêm";
+        
+    }
+    function abc(element){
+        element.parentElement.parentElement.childNodes[1].style.visibility = "visible";
+        
+    }
+    function xyz(element){
+        element.parentElement.parentElement.childNodes[1].style.visibility = "hidden";
+    }
+
+    function hoverSellingProduct(element){
+        element.childNodes[5].style.visibility = "visible";
+    }
+    function outHoverSellingProduct(element){
+        element.childNodes[5].style.visibility = "hidden";
+    }
+
+    function showTooltipSpecification(element){
+        element.parentElement.childNodes[1].style.visibility = "visible";
+        
+    }
+    function hideTooltipSpecification(element){
+        element.parentElement.childNodes[1].style.visibility = "hidden";
+    }
+
+
+
+    async function showAlertSuccess(){
+        document.getElementById("alert_success").style.display = 'block';
+        await sleep(2600);
+        document.getElementById("alert_success").style.display = 'none';
+    }
+
+    function openNewChat(element){
+        element.style.display = 'none';
+        document.getElementById("container_chat").style.display = 'block';
+    }
+    function closeChat(){
+        document.getElementById("container_chat").style.display = 'none';
+        document.getElementById("icon_chat").style.display = 'block';
+    }
+
+    function showCart(){
+        window.location.href = "/html/Cart.html";
+    }
+
+    function showProfile(){
+        window.location.href = "/html/Profile.html";
+    }
+
+</script>
+</html>

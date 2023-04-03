@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<style>
+    span {
+        font-weight: 500;
+        display: inline;
+    }
+
+    span>* {
+        display: inline;
+    }
+
+    #test img {
+        width: 90px;
+    }
+
+    #test {
+        outline: none;
+    }
+
+    #test {
+        border: 1px solid #0168fa;
+    }
+
+    #test:focus {
+        border: 1px solid #0168fa;
+    }
+</style>
+<script>
+    window.location.href = "/html/admin/dashboard.html";
+</script>
+<body>
+    <button id="showSelected" onclick="changeElementSelected('a')">Click me</button>
+    <button id="showSelected1" onclick="changeElementSelected('span')">Undo</button>
+    <button onclick="changeElementSelected('rmLink')">Remove Link</button>
+    <input id="inpuFile" onchange="read(this)" type="file">
+    <div id="test" contenteditable>Content Here....Content Here....Content Here....Content Here...</div>
+
+</body>
+<script>
+    
+    function changeElementSelected(tagName) {
+        let selection = window.getSelection();
+        if (selection) { // make sure it doesn't error if nothing is selected
+            const size = window.getComputedStyle(selection.anchorNode.parentElement, null).getPropertyValue('font-weight');
+            //alert(size)
+        }
+
+
+        // Make sure something was selected
+        if (!selection.rangeCount) {
+            return;
+        }
+
+        let range = selection.getRangeAt(0);
+        if (tagName == "span") {
+            //range.startContainer.parentNode.href="";
+
+            //alert(1)
+            //container.setAttribute('id', 'my-id');
+        }
+
+        if (tagName == "rmLink") {
+            //range.startContainer.parentNode.removeAttribute("href");
+            //let element = document.getElementById('searchWord1');
+            console.log()
+            let element;
+            if(range.startContainer.parentElement.nodeName=="A"){
+                element = range.startContainer.parentElement;
+            }else if(range.startContainer.nextSibling.nodeName=="A"){
+                element = range.startContainer.nextSibling;
+            }else{
+                return;
+            }
+            
+            
+            //2. Get the text it contains
+            let highlightedText = element.innerHTML;
+            
+
+            //3. Get the highlighted element's parent
+            let parent = element.parentNode;
+
+            //4. Create a text node:
+            let newNode = document.createTextNode(highlightedText);
+
+            //5. Insert it into the document before the link
+            parent.insertBefore(newNode, element);
+
+            //6. Remove the link element
+            parent.removeChild(element);
+            return;
+        }
+
+
+        let container = document.createElement(tagName);
+
+        if (tagName == "a") {
+            container.setAttribute('href', '/html/Admin/abcindex.html');
+            //container.setAttribute('id', 'searchWord1');
+        }
+        // Move the contents of the selection into the container
+        container.appendChild(range.extractContents());
+
+        // Move the container into the now empty range
+        range.insertNode(container);
+    }
+
+
+    var idImg = 0;
+    function read(val) {
+        const reader = new FileReader();
+
+        reader.onload = (event) => {
+            document.getElementById("test").innerHTML += `<img height="90px" id="${idImg}" src="" alt="a">`;
+            document.getElementById(idImg).src = event.target.result;
+        }
+
+        reader.readAsDataURL(val.files[0]);
+        idImg++;
+    }
+</script>
+
+</html>

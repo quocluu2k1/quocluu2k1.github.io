@@ -1,0 +1,329 @@
+body{
+    background-color: #f3f3f3;
+}
+.cart_container{
+    height: fit-content;
+    width: 100%;
+}
+
+
+.cart_empty{
+    display: none;
+    text-align: center;
+    padding:70px 0;
+}
+.cart_empty>img{
+    height: 150px;
+    width: auto;
+    
+}
+.cart_empty>h4{
+    padding-bottom: 15px;
+}
+.cart_empty>a{
+    text-decoration: none;
+
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: #cd1817;
+}
+
+
+
+
+
+.cart_pd{
+    height: fit-content;
+    width: 100%;
+    
+    align-items: center;
+}
+.cart_pd>h4{
+    color: #ff1c1c;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+.cart_pd>.container{
+    display: block;
+    border: 1px solid #dee2e6;
+    background-color: white;
+    width: 66%;
+    margin-left: 17%;
+}
+.cart_pd>.container>div:not(:last-child){
+    border-bottom: 1px solid #dee2e6;
+}
+.cart_title>h3{
+    display: inline-block;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.list_product>div:not(:last-child){
+    border-bottom: 1px solid #dee2e6;
+}
+.cart_product_item{
+    height: fit-content;
+    padding: 15px 0;
+}
+.cart_product_item>div{
+    display: inline-block;
+}
+.check_item{
+    text-align: center;
+    margin-left: 0;
+    width: 80px;
+    vertical-align: middle !important;
+}
+.check_item>input{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.info_item{
+    margin-left: 0;
+    padding-left: 0;
+}
+.info_item>img{
+    vertical-align: middle;
+    margin-left: 0;
+    width: 80px;
+    height: 80px;
+}
+.info_item>div{
+    display: inline-block;
+    margin-left: 7px;
+    width: 430px;
+    vertical-align: middle;
+}
+.info_item>div>a{
+    margin-top: 10px !important;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+}
+.choose_sub_product{
+    position: relative;
+    margin-top: 12px;
+    cursor: pointer;
+    color: #0168fa;
+}
+.dropdown_sub_product{
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    z-index: 100;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+}
+.option_sub_product{
+    padding: 8px 20px;
+
+}
+.option_sub_product:hover{
+    background-color: #dee2e6;
+}
+.option_sub_product:not(:last-child){
+    border-bottom: 1px solid #dee2e6;
+}
+.dropdown_sub_product>.selected__option{
+    font-weight: 600;
+}
+
+.price_quantity_item{
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 150px;
+    
+}
+.price_item{
+    margin-bottom: 12px;
+}
+.price_item>span{
+    display: block;
+    text-align: right;
+    margin-right: 7px;
+    margin-bottom: 3px;
+    
+}
+.price_item>.price{
+    color: #cd1817;
+}
+.price_item>.cost{
+    text-decoration: line-through;
+    color: #99a2aa;
+}
+
+.input_quantity_item{
+    text-align: center;
+}
+.input_quantity_item>button{
+    height: 35px;
+    width: 35px;
+    margin: 0;
+    border-color: #c4c4c4;
+    border: 1px solid #99a2aa;
+    cursor: pointer;
+}
+.input_quantity_item>button:active{
+    box-shadow: 0 0 2px #757575;
+    border-color: #cd1817;
+
+}
+.input_quantity_item>input{
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    margin: 0;
+}
+.input_quantity_item>input::-webkit-outer-spin-button,
+.input_quantity_item>input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input_quantity_item>input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.remove_item{
+    margin-left: 30px;
+}
+.remove_item>a{
+    cursor: pointer;
+}
+.remove_item>a:hover{
+    color: #cd1817;
+}
+
+
+.total_payment{
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.total_payment>div{
+    margin-bottom: 12px;
+}
+.total_payment>div>span:first-child{
+    width: 200px;
+    display: inline-block;
+}
+.total_payment>div>span:last-child{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+.title_price{
+    font-weight: 600;
+}
+.total_price{
+    color: #cd1817;
+    font-weight: 600;
+}
+.order_info{
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.customer_sex{
+    margin-top: 15px;
+}
+.customer_sex>input{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.customer_sex>label{
+    cursor: pointer;
+}
+
+.customer_sex>input[type="radio"]:checked + label {
+    font-weight: 600;
+}
+.optional_info,.required_info{
+    margin-top: 12px;
+}
+.required_info>input,.optional_info>input,.customer_address>input,.note_shipment>input{
+    height: 27px;
+    width: 240px;
+    padding-left: 7px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid #99a2aa;
+}
+.optional_info>input,.customer_address>input,.note_shipment>input{
+    width: 510px !important;
+}
+.required_info>input:focus,.optional_info>input:focus,.customer_address>input:focus,.note_shipment>input:focus{
+    outline: none;
+    border-color: #0168fa;
+}
+.address_shipment{
+    display: block;
+    margin-top: 7px;
+}
+.address_shipment>div{
+    margin-top: 10px;
+}
+.address_shipment>div>select{
+    height: 32px;
+    border-radius: 3px;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid #99a2aa;
+}
+.general_address>select{
+    width: 250px;
+    cursor: pointer;
+}
+.detail_address>select{
+    width: 520px;
+    cursor: pointer;
+}
+.general_address>select:focus,.detail_address>select:focus{
+    outline: none;
+    border-color: #0168fa;
+}
+.confirm_order{
+    padding-left: 30px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+    height: fit-content;
+}
+.confirm_order>a{
+    color: white;
+    background-color: #cd1817;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 50px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.time_shipment>select{
+    display: inline-block;
+    margin-left: 15px;
+    height: 32px;
+    border-radius: 3px;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid #99a2aa;
+    width: 250px;
+    cursor: pointer;
+}
+.time_shipment>select:focus{
+    outline: none;
+    border-color: #0168fa;
+}
+.order_info>div>a{
+    display: inline-block;
+    margin-left: 440px;
+    color: #cd1817;
+    cursor: pointer;
+}

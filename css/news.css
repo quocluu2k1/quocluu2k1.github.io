@@ -1,0 +1,221 @@
+body{
+    background-color: #f3f3f3;
+}
+.news_container{
+    height: fit-content;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #3d3d3d;
+}
+.head_news{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.head_news>div{
+    display: inline-block;
+}
+.hot_news{
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.125);
+    width: 72%;
+    padding: 15px;
+}
+.hot_news>div{
+    display: inline-block;
+}
+.main_hot_news{
+    height: fit-content;
+    width: 57%;
+    float: left;
+}
+.main_hot_news>a{
+    text-decoration: none;
+    color: #3d3d3d;
+}
+.main_hot_news>a:hover{
+    color: #0168fa;
+}
+.news_timeline{
+    color: #9b9b9b;
+    font-size: 15px;
+}
+.title_main_hot_news{
+    margin-bottom: 7px;
+}
+.view_news{
+    display: inline-block;
+}
+.time_news{
+    display: inline-block
+}
+
+
+.sub_hot_news{
+    padding-left: 0px;
+    margin-left: 0;
+    height: 100%;
+    width: 40%;
+    float: right;
+}
+.item_sub_hot_news{
+    display: flex;
+    width: 100%;
+    height: 22.5%;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #3d3d3d;
+}
+.item_sub_hot_news:hover{
+    color: #0168fa;
+}
+.item_sub_hot_news>div{
+    display: block;
+    padding-left: 7px;
+}
+
+
+.sidebar_news{
+    margin-left: 20px;
+    width: 28%;
+}
+.head_sidebar{
+    display: block;
+    width: 100%;
+    height: 8%;
+}
+.head_sidebar>div{
+    display: inline-block;
+    width: 30%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 18px;
+    color: #333333;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 12px 16px;
+    padding-bottom: 8px;  
+    border-bottom: none;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    border-radius: 4px;
+    user-select: none;
+}
+.active_sidebar{
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.content_sidebar{
+    background-color: white;
+    height: 91%;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 4px;
+}
+.content_sidebar>ul{
+
+    margin: 0;
+    padding: 12px;
+}
+.item_sidebar{
+    list-style-type: none;
+    margin-bottom: 15px;
+    display: flex;
+    user-select: none;
+}
+.item_sidebar>span{
+    flex-direction: column;
+    display: flex;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #ced4da;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+}
+.item_sidebar>a{
+    display: flex;
+    margin-left: 7px;
+    text-decoration: none;
+    color: #3d3d3d;
+    word-wrap: break-word;
+}
+
+.list_news{
+    margin-top: 20px;
+    width: 72%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.item_news{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    height: 200px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+}
+.item_news>div{
+    display: inline-block;
+    margin-left: 20px;
+}
+.item_news>div>a{
+    text-decoration: none;
+    color: #3d3d3d;
+}
+.item_news>div>a:hover{
+    color: #0168fa;
+}
+.timeline_item_news{
+    display: block;
+    color: #9b9b9b;
+}
+.timeline_item_news>img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+    vertical-align:middle;
+}
+.list_news>div:last-child{
+    border-bottom: none;
+}
+.news_loadmore{
+    margin-top: 15px;
+    width: 72%;
+}
+
+.see_more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top:1px;
+    text-align: center;
+  }
+  .see_more>a{
+    cursor: pointer;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    border: 1px solid #cd1817;
+    color: #cd1817;
+    font-weight: 500;
+  }
+  .see_more>a:hover{
+    color: white;
+    background-color: #cd1817;
+  }

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/03d74a278a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/news.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="logo-header">
+                <a href="/html/Home.html" style="height: fit-content; width: fit-content;">
+                    <img style="height:55px; width:auto;transform: translatey(7px);" src="/logo/Screenshot_2022-08-31_172909-removebg-preview (1).png" alt="logo">
+                </a>
+                
+                <!-- <img style="height:40px; width:auto;transform: translatey(10px);" src="/logo/logo.png" alt="logo"> -->
+                <div>
+                    <!-- <span style="color: rgb(6, 255, 27);margin: 0;padding: 0;">Tech</span>
+                    <span style="color: rgb(255, 238, 6);margin: 0;padding: 0;">Goods</span> -->
+                    <!-- <span style="color: rgb(255 158 13);margin: 0;padding: 0;">TechGoods</span> -->
+                    <!-- <span style="color: white;background-color: #034ea1;padding: 3px; margin: 0;padding: 0;">Tech</span>
+                    <span style="color: white;background-color: #51b847;padding: 3px; margin: 0;padding: 0;">Goods</span> -->
+                </div>              
+            </div>
+            <form action="/html/ResultSearch.html">
+                <input type="text" class="header-search" placeholder="Bạn cần tìm gì..."/>
+                <button type="submit" class="header-search-btn">
+                    <i class="fa-solid fa-magnifying-glass" style="transform: scale(1.4);padding: 0;"></i>
+                </button>
+            </form>
+            <ul class="header-personal">
+                <li>
+                    <div onclick="showCart()">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                </li>
+                <li class="account_info">
+                    <div onclick="showProfile()">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Tài khoản</span>
+                    </div>
+                    <div class="option_account">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <span>Tài khoản của tôi</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <span>Quản lý đơn hàng</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-eye"></i>
+                            <span>Sản phẩm đã xem</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-star"></i>
+                            <span>Lịch sử đánh giá</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-comment"></i>
+                            <span>Lịch sử bình luận</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Đăng xuất</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header-navbar">
+            <ul class="main-menu">
+                <li>
+                    <a class="main-menu-name" href="/html/category.html"><i class="fa-solid fa-mobile-screen"></i><span>Điện thoại</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">Vivo</a></li>
+                                <li><a href="#">Tecno</a></li>
+                                <li><a href="#">Nokia</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">Realme</a></li>
+                                <li><a href="#">Masstel</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 2 triệu</a></li>
+                                <li><a href="#">Từ 2 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Trên 15 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>LOẠI ĐIỆN THOẠI</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Android</a></li>
+                                <li><a href="#">iphone(iOS)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fas fa-laptop"></i><span>Laptop</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Acer</a></li>
+                                <li><a href="#">Dell</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">MSI</a></li>
+                                <li><a href="#">HP</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">LG</a></li>
+                                <li><a href="#">Microsoft surface</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Từ 15 - 20 triệu</a></li>
+                                <li><a href="#">Từ 20 - 30 triệu</a></li>
+                                <li><a href="#">Trên 30 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Laptop văn phòng</a></li>
+                                <li><a href="#">Laptop gaming</a></li>
+                                <li><a href="#">Laptop mỏng nhẹ</a></li>
+                                <li><a href="#">Laptop đồ hoạ - kỹ thuật</a></li>
+                                <li><a href="#">Laptop sinh viên</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-tablet-screen-button"></i><span>Tablet</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">Masstel</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Nexta</a></li>
+                                <li><a href="#">Coolpad</a></li>
+                                <li><a href="#">Nokia</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 3 triệu</a></li>
+                                <li><a href="#">Từ 3 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Trên 10 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Chơi game</a></li>
+                                <li><a href="#">Học tập - văn phòng</a></li>
+                                <li><a href="#">Giải trí</a></li>
+                                <li><a href="#">Đồ hoạ - sáng tạo</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>KÍCH THƯỚC MÀN HÌNH</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">7 - 8 inch (nhỏ gọn)</a></li>
+                                <li><a href="#">10 - 12 inch (trung bình)</a></li>
+                                <li><a href="#">Trên 12 inch (lớn)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-computer"></i><span>PC- Linh kiện</span></a>
+                    <div class="sub-main-menu" style="width: 12%;height: 22%;left: 533px;">
+                        <div>
+                            <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                <li><a href="#">PC</a></li>
+                                <li><a href="#">Linh kiện</a></li>
+                                <li><a href="#">Màn hình</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-headphones-simple"></i><span>Phụ kiện</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>CÁC SẢN PHẨM PHỤ KIỆN</p>
+                            <ul class="col4-ul">
+                                <li><a href="#">Tai nghe</a></li>
+                                <li><a href="#">Balo - túi xách</a></li>
+                                <li><a href="#">Ốp lưng điện thoại</a></li>
+                                <li><a href="#">Phụ kiện Apple</a></li>
+                                <li><a href="#">USB</a></li>
+                                <li><a href="#">Chuột</a></li>
+                                <li><a href="#">Bàn phím</a></li>
+                                <li><a href="#">Thẻ nhớ</a></li>
+                                <li><a href="#">Loa</a></li>
+                                <li><a href="#">Camera</a></li>
+                                <li><a href="#">Sạc dự phòng</a></li>
+                                <li><a href="#">Miếng dán màn hình</a></li>
+                                <li><a href="#">Sạc, cáp</a></li>
+                                <li><a href="#">Giá đỡ điện thoại</a></li>
+                            </ul>
+                        </div>
+                        <div style="margin: 0;padding:0;display: inline-block;position: absolute;" >
+                            <img style="margin-left:40px" src="/image/navbar/phukien.png" alt="image" width="auto" height="220px">
+                        </div>
+                    </div>
+                </li>               
+                <li>
+                    <a class="main-menu-name" href="#"><svg style="fill:#fafafa;transform: translatey(3px);" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M19.9381062,13 C19.6824798,15.0499603 18.651251,16.8590542 17.1473414,18.1243601 L15.9615239,22.2747211 C15.8388664,22.7040227 15.4464804,23 15,23 L9,23 C8.55351964,23 8.16113364,22.7040227 8.03847605,22.2747211 L6.85265862,18.1243601 C5.10841647,16.6568518 4,14.4578682 4,12 C4,9.54213182 5.10841647,7.34314819 6.85265862,5.87563988 L8.03847605,1.72527887 C8.16113364,1.29597731 8.55351964,1 9,1 L15,1 C15.4464804,1 15.8388664,1.29597731 15.9615239,1.72527887 L17.1473414,5.87563988 C18.651251,7.14094578 19.6824798,8.95003966 19.9381062,11 L21,11 L21,13 L19.9381062,13 Z M14.6608919,4.45317664 L14.2456986,3 L9.75430141,3 L9.33910809,4.45317664 C10.1715528,4.15967183 11.0671297,4 12,4 C12.9328703,4 13.8284472,4.15967183 14.6608919,4.45317664 Z M9.33910809,19.5468234 L9.75430141,21 L14.2456986,21 L14.6608919,19.5468234 C13.8284472,19.8403282 12.9328703,20 12,20 C11.0671297,20 10.1715528,19.8403282 9.33910809,19.5468234 Z M12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 Z M13,11 L15,11 L15,13 L11,13 L11,8 L13,8 L13,11 Z"/>
+                        </svg><span>Đồng hồ</span></a>
+                        <div class="sub-main-menu" style="width: 15%;height: 15%;left: 830px;">
+                            <div>
+                                <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                    <li><a href="#">Đồng hồ thông minh</a></li>
+                                    <li><a href="#">Đồng hồ cơ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                      
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-percent"></i><span>Khuyến mãi</span></a>
+                    <!-- <div class="sub-main-menu">7</div> -->
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-newspaper"></i><span>Tin tức</span></a>
+                    <!-- <div class="sub-main-menu">8</div> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="news_container">
+        <div class="head_news">
+            <div class="hot_news">
+                <div class="main_hot_news">
+                    <a href="/html/detail_news.html">
+                        <img width="100%" height="100%" src="/image/news/main_hot_news.webp" alt="">
+                        <h3 class="title_main_hot_news">Đánh giá ASUS Vivobook 14X OLED A1403: Laptop màn hình OLED 2.8K giá chưa tới 20 triệu</h3>
+                        <div class="news_timeline">
+                            <div class="view_news">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>162</span>
+                            </div>
+                            <span style="display: inline-block;margin-left: 3px;margin-right: 3px;">-</span>
+                            <span class="time_news">7 giờ trước</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sub_hot_news">
+                    <a href=""  class="item_sub_hot_news">
+                        <img height="100%" src="/image/news/sub_hot_news1.webp" alt="">
+                        <div>
+                            <h5 style="margin-top: 0; font-size: 15px; margin-bottom: 7px;">Đánh giá HP Pavilion 15 (2022): Laptop văn phòng đẹp như MacBook, chạy...</h5>
+                            <div style="font-size: 13px;" class="news_timeline">
+                                <div class="view_news">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>162</span>
+                                </div>
+                                <span style="display: inline-block;margin-left: 3px;margin-right: 3px;">-</span>
+                                <span class="time_news">7 giờ trước</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href=""  class="item_sub_hot_news">
+                        <img height="100%" src="/image/news/sub_hot_news2.jpg" alt="">
+                        <div>
+                            <h5 style="margin-top: 0; font-size: 15px; margin-bottom: 7px;">iPhone 14 khi nào được mở bán chính hãng tại thị trường Việt Nam?</h5>
+                            <div style="font-size: 13px;" class="news_timeline">
+                                <div class="view_news">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>162</span>
+                                </div>
+                                <span style="display: inline-block;margin-left: 3px;margin-right: 3px;">-</span>
+                                <span class="time_news">7 giờ trước</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href=""  class="item_sub_hot_news">
+                        <img height="100%" src="/image/news/sub_hot_news3.jpg" alt="">
+                        <div>
+                            <h5 style="margin-top: 0; font-size: 15px; margin-bottom: 7px;">Đánh giá ASUS TUF Gaming A15 2022 FA507RC: Bước chuyển mình của laptop...</h5>
+                            <div style="font-size: 13px;" class="news_timeline">
+                                <div class="view_news">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>162</span>
+                                </div>
+                                <span style="display: inline-block;margin-left: 3px;margin-right: 3px;">-</span>
+                                <span class="time_news">7 giờ trước</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href=""  class="item_sub_hot_news">
+                        <img height="100%" src="/image/news/sub_hot_news4.jpeg" alt="">
+                        <div>
+                            <h5 style="margin-top: 0; font-size: 15px; margin-bottom: 7px;">Đây là 5 lý do khiến bạn muốn nâng cấp lên iPhone 14 ngay</h5>
+                            <div style="font-size: 13px;" class="news_timeline">
+                                <div class="view_news">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <span>162</span>
+                                </div>
+                                <span style="display: inline-block;margin-left: 3px;margin-right: 3px;">-</span>
+                                <span class="time_news">7 giờ trước</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar_news">
+                <div class="head_sidebar">
+                    <div>Xem nhiều</div>
+                    <div class="active_sidebar">Tin mới</div>
+                </div>
+                <div class="content_sidebar">
+                    <ul>
+                        <li class="item_sidebar">
+                            <span style="background-color: #cb1c22;">1</span>
+                            <a href="">Trên tay iPhone 14 Pro Max bản Tím Deep Purple sớm nhất tại Việt Nam</a>
+                        </li>
+                        <li class="item_sidebar">
+                            <span style="background-color: #99a2aa;">2</span>
+                            <a href="">Mọi tính năng mới có trong iOS 16.1 beta 1: Matter, sạc năng lượng sạch, cải tiến Wallet,...</a>
+                        </li>
+                        <li class="item_sidebar">
+                            <span>3</span>
+                            <a href="">Trên tay iPhone 14 siêu hot: Màu Xanh rất sang, màn hình rực rỡ, "tai thỏ" quen thuộc</a>
+                        </li>
+                        <li class="item_sidebar">
+                            <span>4</span>
+                            <a href="">Trên tay iPhone 14 Pro màu tím tại Việt Nam: Cho những ai thích điện thoại gọn và mạnh</a>
+                        </li>
+                        <li class="item_sidebar">
+                            <span>5</span>
+                            <a href="">Trên tay Galaxy Z Flip4 Flex Mode Collection phiên bản đặc biệt giới hạn: Khi công nghệ và thời trang song hành</a>
+                        </li>
+                        <li class="item_sidebar">
+                            <span>6</span>
+                            <a href="">Sử dụng Samsung Galaxy Z Flip4, đừng bỏ qua 9 thủ thuật cực hay này!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="list_news">
+            <div class="item_news">
+                <a href="">
+                    <img height="100%" src="/image/news/item_news1.webp" alt="">
+                </a>
+                <div>
+                    <a href="">
+                        <h3 style="margin-top: 5px;margin-bottom: 0;">URF là gì? Những điểm đặc biệt của chế độ URF trong Liên Minh Huyền Thoại</h3>
+                    </a>
+                    <p style="margin-top: 15px;margin-bottom: 20px;">URF là chế độ chơi cực kỳ được ưa chuộng trong Liên Minh Huyền Thoại. Vậy URF là gì và những điểm đặc biệt của URF ra sao mà khiến nhiều người thích đến vậy? Hãy cùng tìm hiểu trong bài viết này nhé.</p>
+                    <div class="timeline_item_news">
+                        <img src="/image/avatar/avatar-admin.webp" alt="">
+                        <span>Nguyễn Quốc Lưu</span>
+                        <span style="margin-left: 3px;margin-right:3px;">-</span>
+                        <span>5 giờ trước</span>
+                        <div style="margin-left: 12px;color: #71acff;" class="view_news">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>162</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_news">
+                <a href="">
+                    <img height="100%" src="/image/news/item_news2.jpg" alt="">
+                </a>
+                <div>
+                    <a href="">
+                        <h3 style="margin-top: 5px;margin-bottom: 0;">Microsoft To Do: Trợ lý nhắc việc hoàn hảo bạn nhất định phải có!</h3>
+                    </a>
+                    <p style="margin-top: 15px;margin-bottom: 20px;">Nhờ sức mạnh của Microsoft To Do (hay To Do) trên Windows 11, iOS, Android và web, bạn có thể dễ dàng quản lý những việc bạn phải làm trong danh sách của mình, ứng dụng sẽ thường xuyên nhắc nhở và thông báo giúp bạn không bỏ lỡ bất kỳ deadline nào và hoàn thành nhiều việc hơn.</p>
+                    <div class="timeline_item_news">
+                        <img src="/image/avatar/avatar-admin.webp" alt="">
+                        <span>Nguyễn Quốc Lưu</span>
+                        <span style="margin-left: 3px;margin-right:3px;">-</span>
+                        <span>3 giờ trước</span>
+                        <div style="margin-left: 12px;color: #71acff;" class="view_news">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>48</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_news">
+                <a href="">
+                    <img height="100%" src="/image/news/item_news2.jpg" alt="">
+                </a>
+                <div>
+                    <a href="">
+                        <h3 style="margin-top: 5px;margin-bottom: 0;">Microsoft To Do: Trợ lý nhắc việc hoàn hảo bạn nhất định phải có!</h3>
+                    </a>
+                    <p style="margin-top: 15px;margin-bottom: 20px;">Nhờ sức mạnh của Microsoft To Do (hay To Do) trên Windows 11, iOS, Android và web, bạn có thể dễ dàng quản lý những việc bạn phải làm trong danh sách của mình, ứng dụng sẽ thường xuyên nhắc nhở và thông báo giúp bạn không bỏ lỡ bất kỳ deadline nào và hoàn thành nhiều việc hơn.</p>
+                    <div class="timeline_item_news">
+                        <img src="/image/avatar/avatar-admin.webp" alt="">
+                        <span>Nguyễn Quốc Lưu</span>
+                        <span style="margin-left: 3px;margin-right:3px;">-</span>
+                        <span>3 giờ trước</span>
+                        <div style="margin-left: 12px;color: #71acff;" class="view_news">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>48</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_news">
+                <a href="">
+                    <img height="100%" src="/image/news/item_news2.jpg" alt="">
+                </a>
+                <div>
+                    <a href="">
+                        <h3 style="margin-top: 5px;margin-bottom: 0;">Microsoft To Do: Trợ lý nhắc việc hoàn hảo bạn nhất định phải có!</h3>
+                    </a>
+                    <p style="margin-top: 15px;margin-bottom: 20px;">Nhờ sức mạnh của Microsoft To Do (hay To Do) trên Windows 11, iOS, Android và web, bạn có thể dễ dàng quản lý những việc bạn phải làm trong danh sách của mình, ứng dụng sẽ thường xuyên nhắc nhở và thông báo giúp bạn không bỏ lỡ bất kỳ deadline nào và hoàn thành nhiều việc hơn.</p>
+                    <div class="timeline_item_news">
+                        <img src="/image/avatar/avatar-admin.webp" alt="">
+                        <span>Nguyễn Quốc Lưu</span>
+                        <span style="margin-left: 3px;margin-right:3px;">-</span>
+                        <span>3 giờ trước</span>
+                        <div style="margin-left: 12px;color: #71acff;" class="view_news">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>48</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_news">
+                <a href="">
+                    <img height="100%" src="/image/news/item_news2.jpg" alt="">
+                </a>
+                <div>
+                    <a href="">
+                        <h3 style="margin-top: 5px;margin-bottom: 0;">Microsoft To Do: Trợ lý nhắc việc hoàn hảo bạn nhất định phải có!</h3>
+                    </a>
+                    <p style="margin-top: 15px;margin-bottom: 20px;">Nhờ sức mạnh của Microsoft To Do (hay To Do) trên Windows 11, iOS, Android và web, bạn có thể dễ dàng quản lý những việc bạn phải làm trong danh sách của mình, ứng dụng sẽ thường xuyên nhắc nhở và thông báo giúp bạn không bỏ lỡ bất kỳ deadline nào và hoàn thành nhiều việc hơn.</p>
+                    <div class="timeline_item_news">
+                        <img src="/image/avatar/avatar-admin.webp" alt="">
+                        <span>Nguyễn Quốc Lưu</span>
+                        <span style="margin-left: 3px;margin-right:3px;">-</span>
+                        <span>3 giờ trước</span>
+                        <div style="margin-left: 12px;color: #71acff;" class="view_news">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>48</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="news_loadmore">
+            <div class="see_more">
+                <a onclick="seeMore()" id="seeMore">Xem Thêm</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div>
+            <h3>LIÊN HỆ</h3>
+            <div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span style="margin-left: 10px;">P.Linh Trung,TP.Thủ Đức,TP.HCM,Việt Nam</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span style="margin-left: 10px;">0123456789</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span style="margin-left: 10px;">info@techgoods.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THÔNG TIN</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>CHÍNH SÁCH</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Đổi trả</a></li>
+                    <li><a href="#">Bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THEO DÕI</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span style="margin-left: 5px;">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span style="margin-left: 5px;">Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span style="margin-left: 5px;">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span style="margin-left: 5px;">Linkedin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>TẢI ỨNG DỤNG</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img height="50px" height="auto" src="/image/footer/googleplay.png" alt="googleplay">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img style="margin-left: 8px;" height="35px" height="auto" src="/image/footer/appstore.png" alt="googleplay">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

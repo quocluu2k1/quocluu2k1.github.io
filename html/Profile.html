@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/03d74a278a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="logo-header">
+                <a href="/html/Home.html" style="height: fit-content; width: fit-content;">
+                    <img style="height:55px; width:auto;transform: translatey(7px);"
+                        src="/logo/Screenshot_2022-08-31_172909-removebg-preview (1).png" alt="logo">
+                </a>
+
+                <!-- <img style="height:40px; width:auto;transform: translatey(10px);" src="/logo/logo.png" alt="logo"> -->
+                <div>
+                    <!-- <span style="color: rgb(6, 255, 27);margin: 0;padding: 0;">Tech</span>
+                    <span style="color: rgb(255, 238, 6);margin: 0;padding: 0;">Goods</span> -->
+                    <!-- <span style="color: rgb(255 158 13);margin: 0;padding: 0;">TechGoods</span> -->
+                    <!-- <span style="color: white;background-color: #034ea1;padding: 3px; margin: 0;padding: 0;">Tech</span>
+                    <span style="color: white;background-color: #51b847;padding: 3px; margin: 0;padding: 0;">Goods</span> -->
+                </div>
+            </div>
+            <form action="/html/ResultSearch.html">
+                <input type="text" class="header-search" placeholder="Bạn cần tìm gì..." />
+                <button type="submit" class="header-search-btn">
+                    <i class="fa-solid fa-magnifying-glass" style="transform: scale(1.4);padding: 0;"></i>
+                </button>
+            </form>
+            <ul class="header-personal">
+                <li>
+                    <div onclick="showCart()">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                </li>
+                <li class="account_info">
+                    <div>
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Tài khoản</span>
+                    </div>
+                    <div class="option_account">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <span>Tài khoản của tôi</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <span>Quản lý đơn hàng</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-eye"></i>
+                            <span>Sản phẩm đã xem</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-star"></i>
+                            <span>Lịch sử đánh giá</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-comment"></i>
+                            <span>Lịch sử bình luận</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Đăng xuất</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header-navbar">
+            <ul class="main-menu">
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-mobile-screen"></i><span>Điện
+                            thoại</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">Vivo</a></li>
+                                <li><a href="#">Tecno</a></li>
+                                <li><a href="#">Nokia</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">Realme</a></li>
+                                <li><a href="#">Masstel</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 2 triệu</a></li>
+                                <li><a href="#">Từ 2 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Trên 15 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>LOẠI ĐIỆN THOẠI</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Android</a></li>
+                                <li><a href="#">iphone(iOS)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fas fa-laptop"></i><span>Laptop</span></a>
+                    <div class="sub-main-menu" style="width:55%;">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Acer</a></li>
+                                <li><a href="#">Dell</a></li>
+                                <li><a href="#">Asus</a></li>
+                                <li><a href="#">MSI</a></li>
+                                <li><a href="#">HP</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">LG</a></li>
+                                <li><a href="#">Microsoft surface</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 10 triệu</a></li>
+                                <li><a href="#">Từ 10 - 15 triệu</a></li>
+                                <li><a href="#">Từ 15 - 20 triệu</a></li>
+                                <li><a href="#">Từ 20 - 30 triệu</a></li>
+                                <li><a href="#">Trên 30 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Laptop văn phòng</a></li>
+                                <li><a href="#">Laptop gaming</a></li>
+                                <li><a href="#">Laptop mỏng nhẹ</a></li>
+                                <li><a href="#">Laptop đồ hoạ - kỹ thuật</a></li>
+                                <li><a href="#">Laptop sinh viên</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i
+                            class="fa-solid fa-tablet-screen-button"></i><span>Tablet</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>HÃNG SẢN XUẤT</p>
+                            <ul class="col3-ul">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">Masstel</a></li>
+                                <li><a href="#">Lenovo</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">OPPO</a></li>
+                                <li><a href="#">Nexta</a></li>
+                                <li><a href="#">Coolpad</a></li>
+                                <li><a href="#">Nokia</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>MỨC GIÁ</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Dưới 3 triệu</a></li>
+                                <li><a href="#">Từ 3 - 5 triệu</a></li>
+                                <li><a href="#">Từ 5 - 10 triệu</a></li>
+                                <li><a href="#">Trên 10 triệu</a></li>
+                            </ul>
+                        </div>
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>THEO NHU CẦU</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">Chơi game</a></li>
+                                <li><a href="#">Học tập - văn phòng</a></li>
+                                <li><a href="#">Giải trí</a></li>
+                                <li><a href="#">Đồ hoạ - sáng tạo</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>KÍCH THƯỚC MÀN HÌNH</p>
+                            <ul class="col1-ul">
+                                <li><a href="#">7 - 8 inch (nhỏ gọn)</a></li>
+                                <li><a href="#">10 - 12 inch (trung bình)</a></li>
+                                <li><a href="#">Trên 12 inch (lớn)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-computer"></i><span>PC- Linh
+                            kiện</span></a>
+                    <div class="sub-main-menu" style="width: 12%;height: 22%;left: 533px;">
+                        <div>
+                            <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                <li><a href="#">PC</a></li>
+                                <li><a href="#">Linh kiện</a></li>
+                                <li><a href="#">Màn hình</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-headphones-simple"></i><span>Phụ
+                            kiện</span></a>
+                    <div class="sub-main-menu">
+                        <div style="border-right: 1px solid rgb(231, 231, 231);">
+                            <p>CÁC SẢN PHẨM PHỤ KIỆN</p>
+                            <ul class="col4-ul">
+                                <li><a href="#">Tai nghe</a></li>
+                                <li><a href="#">Balo - túi xách</a></li>
+                                <li><a href="#">Ốp lưng điện thoại</a></li>
+                                <li><a href="#">Phụ kiện Apple</a></li>
+                                <li><a href="#">USB</a></li>
+                                <li><a href="#">Chuột</a></li>
+                                <li><a href="#">Bàn phím</a></li>
+                                <li><a href="#">Thẻ nhớ</a></li>
+                                <li><a href="#">Loa</a></li>
+                                <li><a href="#">Camera</a></li>
+                                <li><a href="#">Sạc dự phòng</a></li>
+                                <li><a href="#">Miếng dán màn hình</a></li>
+                                <li><a href="#">Sạc, cáp</a></li>
+                                <li><a href="#">Giá đỡ điện thoại</a></li>
+                            </ul>
+                        </div>
+                        <div style="margin: 0;padding:0;display: inline-block;position: absolute;">
+                            <img style="margin-left:40px" src="/image/navbar/phukien.png" alt="image" width="auto"
+                                height="220px">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><svg style="fill:#fafafa;transform: translatey(3px);"
+                            width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M19.9381062,13 C19.6824798,15.0499603 18.651251,16.8590542 17.1473414,18.1243601 L15.9615239,22.2747211 C15.8388664,22.7040227 15.4464804,23 15,23 L9,23 C8.55351964,23 8.16113364,22.7040227 8.03847605,22.2747211 L6.85265862,18.1243601 C5.10841647,16.6568518 4,14.4578682 4,12 C4,9.54213182 5.10841647,7.34314819 6.85265862,5.87563988 L8.03847605,1.72527887 C8.16113364,1.29597731 8.55351964,1 9,1 L15,1 C15.4464804,1 15.8388664,1.29597731 15.9615239,1.72527887 L17.1473414,5.87563988 C18.651251,7.14094578 19.6824798,8.95003966 19.9381062,11 L21,11 L21,13 L19.9381062,13 Z M14.6608919,4.45317664 L14.2456986,3 L9.75430141,3 L9.33910809,4.45317664 C10.1715528,4.15967183 11.0671297,4 12,4 C12.9328703,4 13.8284472,4.15967183 14.6608919,4.45317664 Z M9.33910809,19.5468234 L9.75430141,21 L14.2456986,21 L14.6608919,19.5468234 C13.8284472,19.8403282 12.9328703,20 12,20 C11.0671297,20 10.1715528,19.8403282 9.33910809,19.5468234 Z M12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 Z M13,11 L15,11 L15,13 L11,13 L11,8 L13,8 L13,11 Z" />
+                        </svg><span>Đồng hồ</span></a>
+                    <div class="sub-main-menu" style="width: 15%;height: 15%;left: 830px;">
+                        <div>
+                            <ul class="col1-ul sub-menu-other" style="margin-top: 10px; margin-left: 20px;">
+                                <li><a href="#">Đồng hồ thông minh</a></li>
+                                <li><a href="#">Đồng hồ cơ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-percent"></i><span>Khuyến mãi</span></a>
+                    <!-- <div class="sub-main-menu">7</div> -->
+                </li>
+                <li>
+                    <a class="main-menu-name" href="#"><i class="fa-solid fa-newspaper"></i><span>Tin tức</span></a>
+                    <!-- <div class="sub-main-menu">8</div> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile_container">
+        <div class="left_profile">
+            <div class="header_account">
+                <div>
+                    <img id="imgAvatarMain" src="/image/avatar/default.jpg" alt="avatar">
+                </div>
+                <div>
+                    <span>Tài khoản của</span>
+                    <h4 style="max-width: 175px;display: flex;">Nguyễn Quốc Lưu</h4>
+                </div>
+            </div>
+            <div class="list_option_account">
+                <ul>
+                    <li onclick="addActive(this);" value="1" class="selected_option_account child_option_account">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Tài khoản của tôi</span>
+                    </li>
+                    <li onclick="addActive(this);" value="2" class="child_option_account">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </li>
+                    <li onclick="addActive(this);" value="3" class="child_option_account">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Sản phẩm đã xem</span>
+                    </li>
+                    <li onclick="addActive(this);" value="4" class="child_option_account">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Lịch sử đánh giá</span>
+                    </li>
+                    <li onclick="addActive(this);" value="5" class="child_option_account">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Lịch sử bình luận</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_profile">
+            <!--  Tài khoản của tôi -->
+            <div class="account_info_container" id="myAccount">
+                <div class="title_account_info">
+                    <span>Thông tin tài khoản</span>
+                </div>
+                <div class="account_info_content">
+                    <div class="personal_info">
+                        <div>
+                            <span>Tên Đăng Nhập</span>
+                            <span>nguyenquocluu</span>
+                        </div>
+                        <div>
+                            <span>Họ tên</span>
+                            <input type="text" value="Nguyễn Quốc Lưu">
+                        </div>
+                        <div>
+                            <span>Giới tính</span>
+                            <div>
+                                <input type="radio" id="male" name="sex" value="male" checked>
+                                <label for="male">Nam</label>
+                                <input style="margin-left: 15px;" type="radio" id="female" name="sex" value="female">
+                                <label for="female">Nữ</label>
+                                <input style="margin-left: 15px;" type="radio" id="other_sex" name="sex" value="other">
+                                <label for="other_sex">Khác</label>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Ngày sinh</span>
+                            <div>
+                                <select>
+                                    <option value="0">Ngày</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                                <select>
+                                    <option value="0">Tháng</option>
+                                    <option value="1">Tháng 1</option>
+                                    <option value="2">Tháng 2</option>
+                                </select>
+                                <select>
+                                    <option value="0">Năm</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="address_info">
+                            <span>Địa chỉ</span>
+                            <div>
+                                <div>
+                                    <select style="width: 190px;">
+                                        <option value="0">Chọn Tỉnh / Thành phố</option>
+                                        <option value="1">Hà nội</option>
+                                        <option value="2">TP Hồ Chí Minh</option>
+                                    </select>
+                                    <select style="margin-left: 5px;width: 190px;">
+                                        <option value="0">Chọn Quận / Huyện</option>
+                                        <option value="1">Quận 1</option>
+                                        <option value="2">Quận 2</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <select style="width: 390px;">
+                                        <option value="0">Chọn Phường / Xã</option>
+                                        <option value="1">Phường Bến Nghé</option>
+                                        <option value="2">Phường Bến Thành</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input style="width: 380px;" type="text"
+                                        placeholder="Nhập địa chỉ (số nhà, tên đường...)">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span></span>
+                            <a class="btn_save_info_account">Lưu</a>
+                        </div>
+                    </div>
+                    <div class="other_info">
+                        <div class="change_avatar">
+                            <img id="imgAvatar" src="/image/avatar/default.jpg" alt="avatar">
+                            <input type="file" onchange="read(this)">
+                        </div>
+                        <div class="security_info">
+                            <div>
+                                <span>Số điện thoại và Email</span>
+                                <div>
+                                    <div class="item_security_info">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <div style="width: 195px;">
+                                            <span>Số điện thoại</span>
+                                            <span>0394353345</span>
+                                        </div>
+                                        <div style="margin-top: 10px;">
+                                            <a>Cập nhật</a>
+                                        </div>
+                                    </div>
+
+                                    <div style="border-top: 1px solid rgb(240, 240, 240);" class="item_security_info">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <div style="width: 195px;">
+                                            <span>Địa chỉ email</span>
+                                            <span>quocluu2k1@gmail.com</span>
+                                        </div>
+                                        <div style="margin-top: 10px;">
+                                            <a>Cập nhật</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Bảo mật</span>
+                                <div class="item_security_info">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <div style="width: 195px;">
+                                        <span>Đổi mật khẩu</span>
+                                    </div>
+                                    <div>
+                                        <a>Cập nhật</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quản lý đơn hàng -->
+            <div class="order_management_container" id="orderManagement">
+                <div class="list_tab_order">
+                    <a onclick="addActiveOrder(this);" class="tab_order_management active_tab_order" id="allOrderTab">Tất cả</a>
+                    <a onclick="addActiveOrder(this);" class="tab_order_management" id="waitConfirmOrderTab">Chờ xác nhận</a>
+                    <a onclick="addActiveOrder(this);" class="tab_order_management">Chờ lấy hàng</a>
+                    <a onclick="addActiveOrder(this);" class="tab_order_management">Đang giao</a>
+                    <a onclick="addActiveOrder(this);" class="tab_order_management">Đã giao</a>
+                    <a onclick="addActiveOrder(this);" class="tab_order_management">Đã Hủy</a>
+                </div>
+                <div class="search_order_management">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Tìm kiếm theo tên sản phẩm">
+                </div>
+                <div class="order_management_content">
+                    <div class="all_order_management" id="allOrder">
+                        <div class="list_order_management">
+                            <div>
+                                <i class="fa-solid fa-truck"></i>
+                                <span>Giao hàng thành công</span>
+                            </div>
+                            <div class="list_pd_order">
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="footer_order">
+                                <div class="totol_price_order">
+                                    <span>Tổng số tiền:</span>
+                                    <span>55.980.000₫</span>
+                                </div>
+                                <div style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="view_detail_order">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_order_management">
+                            <div>
+                                <i class="fa-solid fa-ban"></i>
+                                <span>Đã huỷ</span>
+                            </div>
+                            <div class="list_pd_order">
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="footer_order">
+                                <div class="totol_price_order">
+                                    <span>Tổng số tiền:</span>
+                                    <span>55.980.000₫</span>
+                                </div>
+                                <div style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="view_detail_order">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_order_management">
+                            <div>
+                                <i class="fa-solid fa-cart-flatbed-suitcase"></i>
+                                <span>Đang chờ lấy hàng</span>
+                            </div>
+                            <div class="list_pd_order">
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="footer_order">
+                                <div class="totol_price_order">
+                                    <span>Tổng số tiền:</span>
+                                    <span>55.980.000₫</span>
+                                </div>
+                                <div style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="view_detail_order">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_order_management">
+                            <div>
+                                <i class="fa-solid fa-person-running"></i>
+                                <span>Đơn hàng đang giao</span>
+                            </div>
+                            <div class="list_pd_order">
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="footer_order">
+                                <div class="totol_price_order">
+                                    <span>Tổng số tiền:</span>
+                                    <span>55.980.000₫</span>
+                                </div>
+                                <div style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="view_detail_order">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_order_management">
+                            <div>
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>Đang chờ xác nhận</span>
+                            </div>
+                            <div class="list_pd_order">
+                                <div class="pd_order">
+                                    <img src="/image/product/product1.jpg" alt="product">
+                                    <div>
+                                        <a href="/html/DetailProduct.html" class="name_pd_order">Điện thoại Samsung Galaxy S22 Ultra 5G 128GB</a>
+                                        <div class="sub_pd_order">
+                                            <span>Màu: <strong>Xanh</strong></span>
+                                            <span style="margin-left: 7px;font-size:18px;color: #cd1817;"><strong>x1</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="price_pd_order">
+                                        <span class="cost_pd_order">33.990.000₫</span>
+                                        <span class="sale_pd_order">27.990.000₫</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="footer_order">
+                                <div class="totol_price_order">
+                                    <span>Tổng số tiền:</span>
+                                    <span>55.980.000₫</span>
+                                </div>
+                                <div style="margin-top: 10px;padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="view_detail_order">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="wait_confirm_order" id="waitConfirmOrder">
+                        <div class="empty_order">
+                            <img src="/image/tag/empty_order.png" alt="empty_order">
+                            <span>Chưa có đơn hàng</span>
+                        </div>
+                    </div>
+                    <div class="wait_good_order"></div>
+                    <div class="delivering_order"></div>
+                    <div class="cancelled_order"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>LIÊN HỆ</h3>
+            <div>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span style="margin-left: 10px;">P.Linh Trung,TP.Thủ Đức,TP.HCM,Việt Nam</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span style="margin-left: 10px;">0123456789</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span style="margin-left: 10px;">info@techgoods.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THÔNG TIN</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>CHÍNH SÁCH</h3>
+            <div>
+                <ul>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Đổi trả</a></li>
+                    <li><a href="#">Bảo mật</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>THEO DÕI</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span style="margin-left: 5px;">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span style="margin-left: 5px;">Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span style="margin-left: 5px;">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span style="margin-left: 5px;">Linkedin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>TẢI ỨNG DỤNG</h3>
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img height="50px" height="auto" src="/image/footer/googleplay.png" alt="googleplay">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img style="margin-left: 8px;" height="35px" height="auto" src="/image/footer/appstore.png"
+                                alt="googleplay">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const childrens = document.querySelectorAll('.child_option_account');
+        function addActive(element) {
+            if (!element.classList.contains('selected_option_account')) {
+                childrens.forEach(function (e) {
+                    e.classList.remove('selected_option_account');
+                });
+                element.classList.add('selected_option_account');
+                if(element.value==1){
+                    document.getElementById("myAccount").style.display = "block";
+                    document.getElementById("orderManagement").style.display = "none";
+                }else if(element.value==2){
+                    document.getElementById("myAccount").style.display = "none";
+                    document.getElementById("orderManagement").style.display = "block";
+                }
+                
+            }
+            
+        }
+
+        function read(val) {
+            const reader = new FileReader();
+
+            reader.onload = (event) => {
+                document.getElementById("imgAvatar").src = event.target.result;
+                document.getElementById("imgAvatarMain").src = event.target.result;
+            }
+
+            reader.readAsDataURL(val.files[0]);
+        }
+
+        const childrensTabOrder = document.querySelectorAll('.tab_order_management');
+        function addActiveOrder(element){
+            if (!element.classList.contains('active_tab_order')) {
+                childrensTabOrder.forEach(function (e) {
+                    e.classList.remove('active_tab_order');
+                });
+                element.classList.add('active_tab_order');
+                if(element.id=='allOrderTab'){
+                    document.getElementById("allOrder").style.display = "block";
+                    document.getElementById("waitConfirmOrder").style.display = "none";
+                }else{
+                    document.getElementById("allOrder").style.display = "none";
+                    document.getElementById("waitConfirmOrder").style.display = "block";
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>

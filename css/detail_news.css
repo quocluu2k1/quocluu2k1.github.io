@@ -1,0 +1,120 @@
+body{
+    background-color: #f3f3f3; 
+}
+.detail_news_container{
+    width: 100%;
+    height: fit-content;
+    color: #333333;
+}
+.detail_news_content{
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.detail_news_content>div{
+    width: 60%;
+}
+.post_title_news{
+    display: block;
+    margin: 0;
+    line-height: 46px;
+}
+.timeline_item_news{
+    display: block;
+    color: #9b9b9b;
+}
+.timeline_item_news>img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+    vertical-align:middle;
+}
+.view_news{
+    display: inline-block;
+}
+.post_user_news{
+    margin-top: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+}
+.post_des_news{
+    text-align: justify;
+    font-size: 18px;
+    line-height: 33px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+}
+.post_content p{
+    font-size: 18px;
+    line-height: 33px;
+    text-align: justify;
+}
+.post_content h2{
+    margin-top: 30px;
+}
+.post_content a{
+    color: #0168fa;
+    text-decoration: none;
+    text-align: justify;
+}
+.post_content img{
+    width: 100%;
+}
+
+
+.related_article{
+    width: 84%;
+    height: fit-content;
+    margin-top: 30px;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+.related_article>span{
+    font-size: 21px;
+    color: #212529;
+}
+.list_related_article{
+    margin-top: 20px;
+}
+.list_related_article>a{
+    display: inline-flex;
+}
+
+.item_sub_hot_news{
+    display: flex;
+    width: 32%;
+    height: 100px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #3d3d3d;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    
+}
+.item_sub_hot_news:hover{
+    color: #0168fa;
+}
+.item_sub_hot_news>div{
+    display: block;
+    padding-left: 7px;
+}
+.news_timeline{
+    color: #9b9b9b;
+    font-size: 15px;
+}
+.view_news{
+    display: inline-block;
+}
+.time_news{
+    display: inline-block
+}

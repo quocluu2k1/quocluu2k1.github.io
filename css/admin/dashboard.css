@@ -1,0 +1,17 @@
+.dashboard{
+    padding-top: 65px;
+    padding-bottom: 30px;
+}
+.dashboard>div{
+    margin-top: 15px;
+    display: flex;
+    padding-left: 20px;
+}
+.item_dashboard{
+    display: inline-block;
+    background-color: white;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.0625) !important;
+    padding: 15px;
+}

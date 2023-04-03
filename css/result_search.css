@@ -1,0 +1,228 @@
+body{
+    background-color: #f3f3f3;
+}
+.result_container{
+    height: fit-content;
+    width: 100%;
+}
+.no_result{
+    display: none;
+    margin-top: 25px;
+    margin-left: 80px;
+    padding-bottom: 50px;
+}
+.no_result>div{
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.result_search{
+    /* display: none; */
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 20px;
+    height: fit-content;
+}
+.filter_result{
+    display: block;
+    margin-top: 30px;
+    height: fit-content;
+}
+.filter_result>span{
+    display: inline-block;
+}
+.filter_result>div{
+    display: inline-block;
+}
+.filter_result>div>a{
+    padding: 8px 10px;
+    margin-right: 10px;
+    background-color: #d8d8d8;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #d8d8d8;
+}
+.selected_filter{
+    border-color: #cd1817 !important;
+    background-color: #fff0e9 !important;
+    color: #cd1817;
+}
+.list_result{
+    
+    margin-top: 25px;
+    display: block;
+    padding-left: 14px;
+    padding-right: 7px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+  .promotion_item{
+    display: inline-block;
+    width: 225px;
+    height: 380px;
+    margin-right: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #717c88;
+    height: fit-content;
+    margin-bottom: 10px;
+  }
+  .promotion_item:hover{
+    box-shadow: 0 0 5px #cd1817;
+  }
+  .promotion_item>div{
+    margin: 0;
+    padding:0;
+    display: block;
+    position: relative;
+    width: 225px;
+    
+   
+  }
+  .promotion_item>.promotion_item_img{
+    height: 240px;
+  
+  }
+  .promotion_item>.promotion_item_info{
+    padding-bottom: 20px;
+  }
+  .promotion_item>div>a{
+    width: 225px;
+    position: absolute;
+    
+  }
+  .promotion_img_product{
+    width: 200px;
+    height: 200px;
+    margin-left: 12.5px;
+    margin-top: 20px;
+  }
+  .promotion_img_product:hover{
+    animation-name: animation-img_product;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    
+  }
+  
+  @keyframes animation-img_product{
+    0%   { transform: scale(1);}
+  
+    100% { transform: scale(1.1);}
+  }
+  .promotion_item_info{
+    position: absolute;
+    
+  }
+  .promotion_item_info>h4{
+    width: 200px;
+    margin: auto;
+    margin-top: 5px;
+    
+  }
+  .promotion_item_info>h4>a{
+    text-decoration: none;
+    color: #474c51;
+  }
+  .promotion_item_info>h4>a:hover{
+    color: #0168fa;
+  }
+  .promotion_item_info>h3{
+    color: #cd1817;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: fit-content;
+  }
+  .promotion_item_rate{
+    margin: 0;
+    margin-left: 12.5px;
+    margin-top: 10px;
+  }
+  .promotion_item_rate>.nrate{
+    font-size: 14px;
+    color: #999999;
+  }
+  .promotion_item>div>.sale{
+    margin-left: 165px;
+    margin-top: 10px;
+    position: relative;
+    padding: 5px;
+    border-radius: 4px;
+    width: fit-content;
+    background-color: rgb(255, 59, 59);
+    color: white;
+    font-weight: 700;
+  }
+  
+  
+  .ratings {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #cfcfcf;
+    overflow: hidden;
+  }
+  
+  .full-stars{
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fde16d;
+  }
+  
+  .empty-stars:before,
+  .full-stars:before {
+    content: "\2605\2605\2605\2605\2605";
+    font-size: 14pt;
+  }
+  
+  .empty-stars:before {
+    -webkit-text-stroke: 1px #cfcfcf;
+  }
+  
+  .full-stars:before {
+    -webkit-text-stroke: 1px orange;
+  }
+  
+  @-moz-document url-prefix() {
+    .full-stars{
+      color: #ECBE24;
+    }
+  }
+  .full-stars{
+    color: #ECBE24;
+  }
+
+
+  .see_more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top:1px;
+    text-align: center;
+  }
+  .see_more>a{
+    cursor: pointer;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    border: 1px solid #cd1817;
+    color: #cd1817;
+    font-weight: 500;
+  }
+  .see_more>a:hover{
+    color: white;
+    background-color: #cd1817;
+  }
